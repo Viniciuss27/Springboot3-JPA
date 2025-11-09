@@ -2,11 +2,21 @@ package com.educandoweb.curso.entities;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_user")// vai da o nome oara tabela
 public class User implements Serializable{
 	// serializable pare ser transformados em cadeia de bits
    
 	private static final long serialVersionUID = 1L;
 	
+	@Id // chave primaria
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//auto incremento
 	private Long id;
 	private String name;
 	private String email;
